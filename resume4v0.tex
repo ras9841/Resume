@@ -1,0 +1,96 @@
+\documentclass{article}
+% Packages
+\usepackage{environ} % custom environments
+\usepackage{graphicx} % resize table
+\usepackage{enumerate}
+
+% Page Setup
+\voffset = -1.25 in
+\hoffset = - 1 in
+\textwidth = 7 in
+\textheight = 10 in
+\pagestyle{empty}
+
+% Custom Commands
+\setlength\parindent{0cm} % no indent for paragraphs
+\newcommand{\fullbar}{\rule{\textwidth}{0.4pt}} % draw line
+\newcommand{\heading}[1]{{\Large\textbf{#1}\vspace{-.2cm}\newline\fullbar}} % make header
+\renewcommand{\arraystretch}{1} % set table row height
+\newcommand{\job}[3]{
+	\item\textbf{#1} \hfill #2|#3\\
+	}
+\newcommand{\proj}[2]{
+	\item\textbf{#1} \hfill #2\\
+}
+\newcommand{\secspace}{.3 cm}
+\newcommand{\dash}{\item[-]}
+
+\begin{document}
+\heading{Roland Allen Sanford}
+LinkedIn: \hfill	2930 Gaines Basin Rd\\
+www.linkedin.com/in/rasanford \hfill	Albion, NY 14411\\
+\begin{flushright}
+	\vspace{-.65cm}
+	585.590.7489 $|$ ras9841@rit.edu\\
+\end{flushright}
+	
+\heading{Summary}
+\begin{flushleft}
+	A computational scientist with a background in physics, math, and computer science in search of a research position involving mathematical modeling of physical systems.
+\end{flushleft}  
+
+\vspace{\secspace}
+\heading{Educational Highlights}
+\begin{flushleft}
+	\textbf{Rochester Institute of Technology (RIT)}\hfill Rochester, NY
+\end{flushleft}
+\textit{Master of Science} \hfill \quad Computational Math \hfill Expected May 2018 \\
+\textit{Bachelor of Science} \hfill \ Computational Math \hfill Expected May 2018 \\
+\textit{Bachelor of Science} \hfill Physics \hfill Expected May 2018 \\\\
+\textbf{Computer Courses} \hfill Parallel and Distributed Systems, Mechanics of Programming, Software Engineering\\
+\textbf{Math Courses} \hfill Linear Algebra, Boundary Value Problems, Numerical Analysis (current)\\
+\textbf{Physics Courses} \hfill Classical Mechanics (current), Experiments in Modern Physics (current)\\
+
+\vspace{\secspace}
+\heading{Relevant Experience}
+\begin{description}
+\job{Computational Imaging of Atrial Fibrillation}{Feb. 2015}{Present}
+\begin{enumerate}
+	\vspace{-.6cm}
+	\dash Reconstructed the electrical sequence of a human heart using high-density body-surface sensing and 3D tomographic images.
+	\dash Wrote MATLAB code to solve an ill-posed inverse problem using Tikhonov regularization.
+	\dash Delivered phase mapping videos and images resulting from dominate frequency analysis to physician-scientists at Johns Hopkins University to validate our heart-modeling process.
+\end{enumerate}
+
+\job{Mathematical Modeling of Contact Lenses}{Jan. 2015}{Present}
+\begin{enumerate}
+	\vspace{-.6cm}
+	\dash Wrote a simulation in C++ that models the progression of a soft contact lens and a symmetric human eye towards equilibrium.
+	\dash Derived the governing PDEs by balancing the stresses in the eye and at the boundaries.
+	\dash Discretized the PDEs using the finite difference method, and solved the resulting coupled system of equations with successive over-relaxation and forward Euler numerical techniques.
+\end{enumerate}
+\job{Characterization of Heusler Alloys}{Jan. 2014}{Dec. 2014}
+\begin{enumerate}
+	\vspace{-.6cm}
+	\dash Researched the Heusler Alloy $Ni_2Mn(Ga_{1-x}Zn_x$) to determine the effect of Zinc concentration had on the alloy's coercivity  and  Curie temperature.
+	\dash Prepared,  mounted, and conducted experiments on samples using a Vibrating Sample Magnetometer and an AC Susceptibility rig.
+	\dash Wrote MATLAB and python code to aid data acquisition and experimental analysis.
+\end{enumerate}
+\end{description}
+
+\vspace{\secspace}
+\heading{Additional Projects}
+\begin{description}
+\proj{HexToHz}{ Ongoing }
+	Application written in C that takes the binary representation of its source code and creates a song by mapping each byte into a musical note.
+\proj{The Heat is On}{ Completed }	
+	Android-based emissivity heater that relays back the current room temperature and allows the user to control the goal room temperature via Bluetooth.
+\end{description}
+
+
+\vspace{\secspace}
+\heading{Skills}
+\textbf{Languages:} \hfill Python, C, Java, MATLAB, \LaTeX; familiar with C++, JavaScript, and Android\\
+\textbf{Operating Systems:} \hfill Windows and Linux (Fedora, Debian, and Ubuntu); familiar with Mac OS
+
+\end{document}
