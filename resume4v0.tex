@@ -3,89 +3,107 @@
 \usepackage{environ} % custom environments
 \usepackage{graphicx} % resize table
 \usepackage{enumerate}
+\usepackage{multicol}
+\raggedcolumns
 
 % Page Setup
-\voffset = -1.25 in
-\hoffset = - 1 in
-\textwidth = 7 in
-\textheight = 10 in
+\usepackage[margin=.5in]{geometry}
+\footskip = 0cm
+\textheight = 11in
 \pagestyle{empty}
+
+% Image location
+\graphicspath{{images/}}
 
 % Custom Commands
 \setlength\parindent{0cm} % no indent for paragraphs
 \newcommand{\fullbar}{\rule{\textwidth}{0.4pt}} % draw line
 \newcommand{\heading}[1]{{\Large\textbf{#1}\vspace{-.2cm}\newline\fullbar}} % make header
 \renewcommand{\arraystretch}{1} % set table row height
-\newcommand{\job}[3]{
-	\item\textbf{#1} \hfill #2|#3\\
+\newcommand{\job}[5]{
+	\textbf{#1} \hfill #2\\
+	Mentor: #3 \hfill #4|#5
 	}
 \newcommand{\proj}[2]{
-	\item\textbf{#1} \hfill #2\\
+	\textbf {#1} \hfill #2\\
 }
-\newcommand{\secspace}{.3 cm}
-\newcommand{\dash}{\item[-]}
+\newcommand{\secspace}{.1cm}
+\newcommand{\dash}{\item[-]\vspace{-.05cm}}
+
+\newcommand{\vcenteredinclude}[1]{\begingroup
+	\setbox0=\hbox{\includegraphics[scale=.05]{#1}}%
+	\parbox{\wd0}{\box0}\endgroup}
 
 \begin{document}
-\heading{Roland Allen Sanford}
-LinkedIn: \hspace{.14cm}www.linkedin.com/in/rasanford\hfill	2930 Gaines Basin Rd, Albion, NY 14411\\
-GitHub: \quad www.github.com/ras9841 \hfill 585.590.7489 $|$ ras9841@rit.edu
+\heading{Roland Allen Sanford}\\
+\begin{minipage}{\textwidth}
+	\vspace{.3cm}
+\vcenteredinclude{linked_in.png} \quad in/rasanford\hfill	2930 Gaines Basin Rd, Albion, NY 14411 	\vspace{.05cm}\\
+\vcenteredinclude{github.png}
+\quad ras9841 \hfill 585.590.7489 $|$ ras9841@rit.edu
 \vspace{.4cm}
-	
-\heading{Overview}
-\begin{flushleft}
-	A computational scientist with a background in physics, math, and computer science interested in the construction and analysis of mathematical models of physical systems.
-\end{flushleft}  
+\end{minipage}
 
 \vspace{\secspace}
-\heading{Educational Highlights}
+\heading{Education}
+\vspace{-.7cm}
 \begin{flushleft}
-	\textbf{Rochester Institute of Technology (RIT)}\hfill Rochester, NY
+	\textbf{Rochester Institute of Technology (RIT)}\hfill Graduation: May 2018 \\Rochester, NY 14623\hfill GPA: 3.47/4.00
 \end{flushleft}
-\textit{Master of Science} \hfill \quad Computational Mathematics \hfill Expected May 2018 \\
-\textit{Bachelor of Science} \hfill \ Computational Mathematics \hfill Expected May 2018 \\
-\textit{Bachelor of Science} \hfill Physics \hfill Expected May 2018 \\\\
-\textbf{Computer Courses} \hfill Parallel and Distributed Systems, Mechanics of Programming, Software Engineering\\
-\textbf{Math Courses} \hfill Advanced Linear Algebra, Numerical Analysis, Stochastic Processes, Real Analysis\\
-\textbf{Physics Courses} \hfill Classical Mechanics, Electricity and Magnetism, Advanced Laboratory in Physics\\
+
+\textit{Masters of Science}: Applied and  Computational Mathematics
+\begin{itemize}
+	\vspace{-.2cm}
+	\dash Program Concentration: Scientific Computing, a mixture of numerical analysis and performance computing. 
+	\vspace{-.2cm}
+	\dash Thesis Title: Modeling the Group Structure of Cells in a 3D Co-culture.
+\end{itemize}
+\textit{Bachelors of Science}: Double major in Physics and Computational Mathematics \\
 
 \vspace{\secspace}
-\heading{Relevant Experience}
-\begin{description}
-\job{Computational Imaging of Atrial Fibrillation}{Feb. 2015}{Present}
+\heading{Employment}
+\job{Computational Imaging Researcher}{RIT, Johns Hopkins University}
+{Dr. Linwei Wang}{Feb 2015}{Present}
 \begin{enumerate}
-	\vspace{-.6cm}
-	\dash Developed the code and documentation for a MATLAB pipeline that reconstructs the epicardial  potentials of a patient's heart by implementing second-order Tikhonov regularization to solve an ill-posed inverse problem. 
-	\dash Pipeline includes constructing patient-specific geometric models of the torso and the atria as well as processing electrocardiogram data.
-	\dash Delivered phase mapping videos and images resulting from dominant frequency analysis to physician-scientists at Johns Hopkins University to validate our modeling process.
+	\dash Developed a MATLAB pipeline that identifies the region of tissue on a patient's heart that is producing a cardiac arrhythmia. 
+	\dash Analyzed twelve patients by implementing several signal processing methods and collaborated with physician-scientists at Johns Hopkins Hospital to validate the pipeline.
+	\dash Designing of a 120-electrode vest by developing a genetic algorithm that optimizes the electrode locations in order to improve signal quality from the patient's atria.  
 \end{enumerate}
 
-\job{Mathematical Modeling of Contact Lenses}{Jan. 2015}{Present}
+\job{Contact Lens Research Assistant}{RIT}{Dr. David Ross}{Jan 2015}{Present}
 \begin{enumerate}
-	\vspace{-.6cm}
-	\dash Modeled the progression of a soft contact lens and a cylindrically-symmetric eye towards equilibrium.
-	\dash Derived the governing PDEs by balancing the stresses in the eye and on its boundaries.
-	\dash Discretized the PDEs using forth-order finite difference equations, and solved the resulting coupled system by implementing successive over-relaxation and forward Euler numerical techniques in C++.
+	\dash Modeled the progression of a soft contact lens and a human eye towards equilibrium.
+	\dash Derived the system's governing equations by balancing the mechanical stresses in the eye and on its boundaries.
+	\dash Developing C++ code to numerically solve the coupled system of differential equations to a global second-order accuracy.
 \end{enumerate}
-\job{Characterization of Heusler Alloys}{Jan. 2014}{Dec. 2014}
-\begin{enumerate}
-	\vspace{-.6cm}
-	\dash Researched the Heusler Alloy $Ni_2Mn(Ga_{1-x}Zn_x$) to determine the effect of Zinc concentration on the alloy's coercivity  and  Curie temperature.
-	\dash Prepared,  mounted, and conducted experiments on samples using a Vibrating Sample Magnetometer and an AC Susceptibility rig.
-	\dash Wrote MATLAB and python code to aid data acquisition and experimental analysis.
-\end{enumerate}
-\end{description}
-\vspace{\secspace}
-\heading{Additional Projects}
-\begin{description}
-\proj{Chebfun Statistics}{ Ongoing }
-	Worked with faculty at the University of Delaware to add a random variable class and associated methods to the Chebfun MATLAB package (www.chebfun.org).
-\proj{Contact Lens Web Application}{ Completed }	
-	Designed an interactive contact lens application for Alden Optical that displays user-made changes in the lens design in real time (pending release).
-\end{description}
 
+\job{Web Developer}{Alden Optical}{Charley Creighton}{Aug 2015}{Jan 2016}
+\begin{enumerate}
+	\dash Created a responsive web application that allows users to compare contact lens design.
+	\dash Used the D3 and JQuery JavaScript libraries to display design changes in real-time.
+\end{enumerate}
+
+\vspace{.3cm}
+\heading{Projects}
+
+\vspace{.1cm}
+	\textbf{Numerical Study of Cancer Cells}\hfill Started April 2016\\
+	Examine how the differences in physical  properties of cells in a co-culture determine the system's collective behavior. Simulations are conducted in the Julia programming language.\\\\
+	\textbf{The Heat is On!} \hfill Completed October 2015\\
+	An andriod application that communicates via bluetooth with an arduino board which regulates the heater's output temperature. The heater was built using empty soda cans and old computer fans. \\
+	
 \vspace{\secspace}
 \heading{Skills}
-\textbf{Languages:} \hfill Python, C, Java, MATLAB, \LaTeX; familiar with C++, JavaScript, Julia, and Android\\
-\textbf{Operating Systems:} \hfill Windows and Linux (Arch, Fedora, Debian, and Ubuntu); familiar with Mac OS
+\vspace{-.65cm}
+\begin{table}[h]
+	\hspace{-.3cm}
+	\begin{tabular}{l l}
+		\textbf{Language} & Python, Java, MATLAB; familiar with C, C++, JavaScript, and Julia\\
+		\textbf{Computational} & Parallel \& distributed systems, memory management, software engineering \\
+		\textbf{Mathematical} & Linear algebra, numerical analysis, stability analysis, finite-difference method\\
+		\textbf{Physics} & Variational calculus, data acquisition and analysis, circuit construction\\
+		\textbf{Miscellaneous} & Backpacking, winter camping, novice carpentry 
+	\end{tabular}
+\end{table}
 
 \end{document}
