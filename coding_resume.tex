@@ -1,0 +1,129 @@
+\documentclass{article}
+% Packages
+\usepackage{environ} % custom environments
+\usepackage{graphicx} % resize table
+\usepackage{enumerate} 
+\usepackage{ragged2e}
+\usepackage{color}
+\usepackage{amssymb}
+
+% Page Setup
+\usepackage[margin=.3in]{geometry}
+\footskip = 0cm
+\pagestyle{empty}
+\renewcommand{\baselinestretch}{1.125}
+
+% Custom Colors
+\definecolor{green}{rgb}{0.0, 0.5, 0.0}
+\definecolor{blue}{rgb}{0.2, 0.2, 0.6}
+
+\definecolor{high}{rgb}{0.03, 0.27, 0.49} %blue
+\definecolor{med}{rgb}{0.0, 0.55, 0.55} %cyan
+\definecolor{low}{rgb}{0.0, 0.81, 0.82} %turquoise
+\definecolor{bad}{rgb}{0.8, 0.31, 0.36} %red
+\definecolor{none}{rgb}{1,1,1} %red
+
+% Image location
+\graphicspath{{images/}}
+
+% Set company
+\newcommand{\company}{Facebook}
+
+% Custom Commands
+\setlength\parindent{0cm} % no indent for paragraphs
+\newcommand{\fullbar}{\rule{\textwidth}{0.4pt}} % draw line
+\newcommand{\vcenteredinclude}[1]{\begingroup
+	\setbox0=\hbox{\includegraphics[scale=.05]{#1}}
+	\parbox{\wd0}{\box0}\endgroup}
+\newcommand{\rsection}[1]{\noindent{\large\textbf{[{\color{blue}ras}\at{\color{blue} \company} /] {\color{green}\$} #1}}}
+\newcommand{\at}{{\small @}}
+\newcommand{\job}[4]{
+	\textbf{#1}\\ #2 \hfill #3|#4 \vspace{-.05in}
+}
+\newcommand{\proj}[3]{
+	\textbf{#1}\\ #2 \hfill #3 \vspace{-.05in}
+}
+\newcommand{\dash}{\item[-]\vspace{-.05cm}}
+\newcommand{\sqr}[1]{{\color{#1}$\blacksquare$}}
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Roland Allen Sanford} }\\
+{\Large Computational Scientist}\\
+\end{center}
+\begin{minipage}[t]{0.2\linewidth}   
+\begin{flushright}
+		\textbf{\textit{Contact Information}}\\
+		2930 Gaines Basin Rd\\
+		Albion, NY 14411\\
+		\paragraph{}
+		585.590.7489\\
+		ras9841\at rit.edu\\
+		\paragraph{}
+		\textbf{\textit{Websites}}\\
+		\hspace{.1cm}\vcenteredinclude{linkedin-icon} \hfill in/rasanford\\
+		\vspace{.1cm}
+		\hspace{.1cm}\vcenteredinclude{github-icon} \hfill /ras9841\\
+		\paragraph{}
+		\textbf{\textit{Language Ability}} \\
+		\vspace{.25cm}
+		\begin{tabular}{r | r r}
+		\sqr{high}\sqr{high}\sqr{high}& &MATLAB \\
+		\sqr{high}\sqr{high}\sqr{high}& &Python\\
+		\sqr{high}\sqr{high}\sqr{high}& &Java \\
+		\sqr{med}\sqr{med}& & C++ \\
+		\sqr{med}\sqr{med}& & Julia \\
+		\sqr{low}& & JavaScript\\
+		\sqr{low}& & Bash\\
+		\sqr{low}&\sqr{none}\sqr{none}& C \\
+		\end{tabular}
+		\paragraph{}
+		\textbf{\textit{Additional Skills}}\\
+		\vspace{.25cm}
+		\begin{tabular}{r | r r}
+			\sqr{high}\sqr{high}\sqr{high} & &Backpacking \\
+			\sqr{high}\sqr{high}\sqr{high} & &Hiking\\
+			\sqr{low} & & Broomball \\
+			 & \sqr{bad} & Bowling \\
+		\end{tabular}
+\end{flushright}
+\end{minipage}
+\hspace{0.025\linewidth}
+\begin{minipage}[t]{0.7\linewidth}
+\rsection{Objective}\\
+Leverage my 3+ years developing high-performance software, writing technical documentation, and collaborating with industry professionals into a Summer 2017 software engineering internship at \company. \vspace{.25cm} \\ 
+\rsection{Education}\\
+\textbf{Rochester Institute of Technology (RIT)}\hfill Graduation: May 2018 \\Rochester, NY 14623\hfill GPA: 3.47/4.00 \\
+\textit{Masters of Science}: Applied and  Computational Mathematics\\
+\textit{Bachelors of Science}: Double major in Physics and Computational Mathematics \vspace{.25cm}\\ 
+\rsection{Employment}\\
+\job{Cardiac Imaging Developer}{Rochester Institute of Technology}{Feb 2015}{Present}
+\begin{itemize}
+	\dash Created a MATLAB pipeline that constructs to-scale models of a patient's heart and torso, computes the electrical potentials on the heart's surface, and determines the qualitative location of the cardiac arrhythmia.
+	\dash Conducted patient analysis in collaboration with electrophysiologists at Johns Hopkins Hospital resulting in the successful treatment rate of 92\%.  
+	\dash Informing the design of a 120-electrode vest using a genetic algorithm. The fitness function is being optimized to improve signal quality from specified regions of the heart.  
+\end{itemize}
+\job{Contact Lenses Research Assistant}{Rochester Institute of Technology}{Jan 2015}{Present}
+\begin{itemize}
+	\dash Modeled the progression of a soft contact lens and a human eye towards equilibrium in a C++ simulation to inform the design of contact lenses.
+	\dash Currently working to improve the simulation accuracy and develop a graphic interface to be used by engineers.
+\end{itemize}
+\job{Web Developer}{Alden Optical}{Aug 2015}{Jan 2016}
+\begin{itemize}
+	\dash Developed a responsive web application in JavaScript that visualizes the effects of changing contact lens design parameters to be used as a marketing tool.  
+	\dash Utilized the D3 and jQuery libraries to display design changes in real-time.
+\end{itemize} 
+ \vspace{0cm} 
+\rsection{Projects}\\
+\job{Modeling Cancer Cells}{Rochester Institute of Technology}{Aug 2016}{Present}
+\begin{itemize}
+	\dash Built upon an existing Julia code base to allow the simulations of healthy and cancerous breast cells in a three-dimensional confinement. 
+	\dash Currently working to increase the simulation throughput by increasing the numerical accuracy and refactoring the code into a parallelizable form.
+\end{itemize}
+\proj{Heating with Andriod}{UBHack}{Oct 2015} 
+\begin{itemize} 
+	\dash Constructed a heater out of black-painted aluminum cans and two computer fans controlled by an Andriod application.
+	\dash Used a Bluetooth protocol to communicate between the Android device and an Arduino that controlled the fan speed. 
+\end{itemize}
+\end{minipage}
+\end{document}
