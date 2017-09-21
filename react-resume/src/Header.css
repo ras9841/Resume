@@ -1,0 +1,27 @@
+.headerContainer {
+  height: 1.5in;
+  width: 100%;
+}
+
+#headerText {
+  padding-top: 0px;
+  padding-left: 20px;
+  display: inline-block;
+  width: 60%;
+}
+
+#name {
+  font-size: 32px;
+}
+
+#tagLine {
+  font-size: 18px;
+  font-style: italic;
+}
+
+#profileImage {
+  width: 20%;
+  float: right;
+  margin-top: 12px;
+  margin-right: 20px;
+}

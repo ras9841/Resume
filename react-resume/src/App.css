@@ -1,0 +1,17 @@
+.leftPannel {
+  padding-left: .5in;
+  width: 3in;
+}
+
+.rightPannel {
+  width: 4.5in;
+  padding-right: .5in;
+}
+
+.pannel {
+  display: inline-block;
+  margin: 0px;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
