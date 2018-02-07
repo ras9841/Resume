@@ -4,10 +4,14 @@
 }
 
 #headerText {
-  padding-top: 0px;
-  padding-left: 20px;
+  padding-top: 18px;
+  padding-left: .25in;
   display: inline-block;
   width: 60%;
+}
+
+#headerText > p {
+  margin-top: 0px;
 }
 
 #name {
@@ -22,6 +26,6 @@
 #profileImage {
   width: 20%;
   float: right;
-  margin-top: 12px;
+  margin-top: 15px;
   margin-right: 20px;
 }

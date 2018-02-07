@@ -20,7 +20,7 @@ const Header = (props) => (
           <Avatar
             id="profileImage"
             src="profile.jpg"
-            size={120}
+            size={115}
           />
     </div>
     <div style={{ backgroundColor: props.muiTheme.palette.primary2Color,

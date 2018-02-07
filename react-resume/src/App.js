@@ -2,6 +2,8 @@ import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Header from './Header';
+import LeftSide from './LeftSide'
+import RightSide from './RightSide'
 import "./App.css"
 
 import {lightBlue900, lightBlue700, grey100} from 'material-ui/styles/colors';
@@ -21,10 +23,10 @@ const App = () => (
     <div>
       <Header/>
       <div className="leftPannel pannel">
-        Left
+        <LeftSide/>
       </div>
       <div className="rightPannel pannel">
-        Right
+        <RightSide/>
       </div>
     </div>
   </MuiThemeProvider>

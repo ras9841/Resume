@@ -1,17 +1,23 @@
 .leftPannel {
-  padding-left: .5in;
+  padding-left: .25in;
   width: 3in;
+  padding-right: .5in;
 }
 
 .rightPannel {
   width: 4.5in;
-  padding-right: .5in;
+  padding-right: .25in;
 }
 
 .pannel {
   display: inline-block;
+  vertical-align: top;
   margin: 0px;
-  height: 100%;
-  padding-top: 10px;
+  height: 9in;
   padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 14pt;
+  margin-top: .2in;
 }
