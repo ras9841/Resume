@@ -20,6 +20,7 @@ const Header = (props) => (
           <Avatar
             id="profileImage"
             src="profile.jpg"
+            style={{display: "none"}}
             size={115}
           />
     </div>

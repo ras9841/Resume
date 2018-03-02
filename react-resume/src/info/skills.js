@@ -4,7 +4,7 @@ const skills = {
     "Java": 2,
     "JS - ES6": 2,
     "C++": 2,
-    "R": 1,
+    "R": 2,
     "SQL": 1
   },
   frameworks: {
